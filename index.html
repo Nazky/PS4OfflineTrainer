@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html manifest="trainer.cache" lang="en">
     <head>
 
         <!-- Favicon -->
@@ -21,10 +21,28 @@
 		<script data-ad-client="ca-pub-1858709607248112" async src="js/adsbygoogle.js"></script>
     </head>
     <body class="bg-dark">
+        <script>
+            window.applicationCache.ondownloading = function()
+            {
+                alert("Caching started !!")
+            };
+            
+            window.applicationCache.onprogress = function(a)
+            {
+                document.getElementById("progress").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+            };
+            
+            window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+            {
+                alert("Page Cached!!")
+            };
+            </script>
 
         <video autoplay muted loop class="vid">
             <source src="vid/jumbotron.mp4" type="video/mp4">
         </video>
+
+        <div id="progress"></div>
 
         <div class="jumbotron transparent">
             <div class="d-flex justify-content-center">
