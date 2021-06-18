@@ -1,0 +1,22 @@
+{
+    "name": "RESIDENT EVIL 2",
+    "id": "CUSA09171",
+    "version": "01.01",
+    "process": "eboot.bin",
+    "mods": [
+        {
+            "name": "No Reload",
+            "type": "checkbox",
+            "memory": [
+                {
+                    "offset": "1FE4CE4",
+                    "on": "909090",
+                    "off": "895120"
+                }
+            ]
+        }
+    ],
+    "credits": [
+        "gokusuper"
+    ]
+}

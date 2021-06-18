@@ -1,0 +1,86 @@
+:root {
+  --notification-size: 350px;
+}
+
+.notification {
+  position: fixed;
+  display: flex;
+  width: var(--notification-size);
+  right: var(--space-4);
+  border: var(--border);
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-large);
+  transition: var(--transition);
+  animation: slide-in var(--transition-speed) var(--transition-curve);
+}
+.content {
+  padding: var(--space-4);
+}
+.title {
+  font-size: var(--text-md);
+  margin-bottom: var(--space-1);
+  font-weight: bold;
+  color: var(--color-gray-800);
+}
+.description {
+  color: var(--color-gray-600);
+}
+.close {
+  font-size: var(--text-sm);
+  margin-left: auto;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-left: var(--border);
+  background-color: transparent;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--color-gray-400);
+  cursor: pointer;
+}
+.close:hover {
+  background-color: var(--color-gray-100);
+}
+.close:active {
+  color: var(--color-gray-700);
+}
+.close:focus,
+.close:active {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+.add {
+  padding: var(--space-3) var(--space-5);
+  border: 0;
+  font-weight: bold;
+  background-color: var(--color-blue-500);
+  color: var(--color-white);
+  border-radius: var(--round);
+  cursor: pointer;
+  outline: none;
+}
+.add:hover {
+  background-color: var(--color-blue-400);
+}
+.add:focus {
+  box-shadow: var(--shadow-focus);
+}
+.add:active {
+  background-color: var(--color-blue-500);
+}
+.animate-out {
+  animation: fade-out var(--transition-speed) var(--transition-curve);
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: translateX(var(--notification-size));
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(var(--notification-size));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
