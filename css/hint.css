@@ -21,10 +21,10 @@
   font-size: var(--text-md);
   margin-bottom: var(--space-1);
   font-weight: bold;
-  color: var(--color-gray-800);
+  color: var(--color-gray);
 }
 .description {
-  color: var(--color-gray-600);
+  color: var(--color-gray);
 }
 .close {
   font-size: var(--text-sm);
@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 .close:hover {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-gray);
 }
 .close:active {
   color: var(--color-gray-700);
@@ -52,20 +52,20 @@
   padding: var(--space-3) var(--space-5);
   border: 0;
   font-weight: bold;
-  background-color: var(--color-blue-500);
+  background-color: var(--color-indigo);
   color: var(--color-white);
   border-radius: var(--round);
   cursor: pointer;
   outline: none;
 }
 .add:hover {
-  background-color: var(--color-blue-400);
+  background-color: var(--color-indigo);
 }
 .add:focus {
   box-shadow: var(--shadow-focus);
 }
 .add:active {
-  background-color: var(--color-blue-500);
+  background-color: var(--color-indigo);
 }
 .animate-out {
   animation: fade-out var(--transition-speed) var(--transition-curve);

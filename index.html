@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
-<html manifest="trainer.cache" lang="en">
+<html manifest="./trainer.cache" lang="en">
     <head>
 
+        
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.png">
         <meta charset="UTF-8">
         <title>PS4 Offline Trainer (TylerMods)</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
         <link rel="stylesheet" href="css/main.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
@@ -17,41 +18,79 @@
         <script src="js/main.js"></script>
 		
     </head>
-    <body class="bg-dark">
+    <body onload="load_()" class="bg-dark">
         <script>
-            window.applicationCache.ondownloading = function()
-            {
-                alert("Caching started !!")
-            };
+            function cc() {
+                var c = "PlayStation";
+                var ma = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 ('), navigator.userAgent.indexOf(')'));
+                var mat = ma.includes(c);
+                //document.getElementById("test").innerHTML = mat;
+                if (mat == true) {
+                    //alert("true");
+                    if (autopay.checked) {
+                        var answer = window.confirm("Load the WebRTE Payload ?");
+                        if (answer) {
+                            window.location="./payloads/WebRTE/index.html";
+                        }
+                        else {
+                            //some code
+                        }
+                    } else {
+                        
+                    }
+                    
+                } else {
+                    //alert("false " + ma);
+                }
+            }
             
-            window.applicationCache.onprogress = function(a)
-            {
-                document.getElementById("progress").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
-            };
+                    window.applicationCache.ondownloading = function()
+                    {
+                        //alert("Caching started !!")
+                        document.getElementById("progress").innerHTML="<h3>Caching started...</h3>";
+                    };
+                    
+                    window.applicationCache.onprogress = function(a)
+                    {
+                        document.getElementById("progress").style.textAlign='center';
+                        document.getElementById("progress").style.color='orange';
+                        document.getElementById("progress").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+                    };
+                    
+                    window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+                    {
+                        //alert("Page Cached!!")
+                        document.getElementById("progress").style.color='green';
+                        document.getElementById("progress").innerHTML="<h3>Page Cached !</h3>";
+                        window.location.reload(true);
+                    };
+
             
-            window.applicationCache.oncached = window.applicationCache.onupdateready = function()
-            {
-                alert("Page Cached!!")
-            };
             </script>
 
         <div id="progress" style="color:white;"></div>
+        <!--<p id="test"></p>-->
+        <div id="test2" style="padding-bottom: 5%;"></div>
 
-        <div class="jumbotron transparent">
+        <div class="jumbotron transparent" style="margin: auto;height: 50%; width: 50%; border-radius: 10px; border: 5px black solid; border-color: darkslateblue; background-position: center;background-repeat: no-repeat; background-size: 100% 100%;background-image: linear-gradient(rgba(255, 0, 191, 0.336), rgba(255, 0, 140, 0.233));backdrop-filter: blur(10px);">
             <div class="d-flex justify-content-center">
                 <input id="ip" class="form-control" type="text" placeholder="localhost or 127.0.0.1" style="max-width :320px">
             </div>
             <p></p>
             <div class="d-flex justify-content-center">
                 <input class="form-control" id="search-input" type="text" placeholder="Search..." style="max-width :280px">
-                <button id="search-button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                <button id="search-button" class="btn btn-primary" style="background-color: blueviolet; color: rgb(0, 255, 179);" ><img src="./img/img_358398.png" width="16px" height="16px"/></button>
 
             </div>
             <p></p>
-            <div class="d-flex justify-content-center btn-toolbar">
-                <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#credits-dialog">Credits</button>
-                <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#instructions-dialog">Instructions</button>
-                <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#tips-dialog">Tips</button>
+            <div onclick="save()" id="autojb" style="color: rgb(0, 255, 179);text-align: center;margin :auto;font-size: 15px;padding-top: 1%;padding-bottom: 2%;">
+                <p style="padding-top: 1%;font-size: 15px;">Payload</p>
+                <input onclick="cc()" type="checkbox" class="flipswitch" id="autopay" name="autopay" style="cursor: pointer;padding-bottom: 1%;" > 
+            </div>
+            <div class="d-flex justify-content-center btn-toolbar" style="padding-top: 5%;">
+                <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#credits-dialog" style="background-color: blueviolet; color: rgb(0, 255, 179);position: absolute;left: 30%;" >Credits</button>
+                <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#instructions-dialog" style="background-color: blueviolet; color: rgb(0, 255, 179);position: absolute;margin-left: auto;margin-right: auto;" >Instructions</button>
+                <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#tips-dialog" style="background-color: blueviolet; color: rgb(0, 255, 179);position: absolute;right: 30%;" >Tips</button>
             </div>
         </div>
         <div class="modal fade" id="credits-dialog">
@@ -105,9 +144,11 @@
                 </div>
             </div>
         </div>
-        <div id="container" class="center-block d-flex flex-wrap justify-content-center">
+        <div style="padding-bottom: 5%;"></div>
+        <div id="container" class="center-block d-flex flex-wrap justify-content-center" style="padding-bottom: 5%; padding-top: 5%;background-size: 100% 100% ;background-repeat: no-repeat;margin: auto;height: 90%; width: 90%; border-radius: 10px; border: 5px black solid; border-color: darkslateblue; background-position: center;background-image: linear-gradient(rgba(255, 0, 191, 0.336), rgba(255, 0, 140, 0.233));backdrop-filter: blur(10px);">
 
         </div>
+        <div style="padding-top: 5%;"></div>
         <div id="trainer-dialog" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -169,5 +210,38 @@
 						(adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
         </div>
+        <script>
+            var i, checkboxes = document.querySelectorAll('input[type=checkbox]');
+
+            function save() {
+                for (i = 0; i < checkboxes.length; i++) {
+                    localStorage.setItem(checkboxes[i].value, checkboxes[i].checked); 
+                }
+            }
+
+            function load_() {
+                for (i = 0; i < checkboxes.length; i++) {
+                    checkboxes[i].checked = localStorage.getItem(checkboxes[i].value) === 'true' ? true:false;
+                }
+                if (autopay.checked) {
+                    cc();
+                }
+
+                var c = "PlayStation";
+                var ma = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 ('), navigator.userAgent.indexOf(')'));
+                var mat = ma.includes(c);
+                //document.getElementById("test").innerHTML = mat;
+                if (mat == true) {
+                    //alert("true");
+                    
+                } else {
+                    document.body.style.backgroundImage = "url('./img/wallpaper.jpg')"; 
+                    document.body.style.backgroundAttachment = 'fixed';
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = 'cover';
+
+                }
+            } 
+        </script>
     </body>
 </html>

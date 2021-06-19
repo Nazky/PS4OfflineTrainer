@@ -1,9 +1,16 @@
 CACHE MANIFEST 
-# v2.5.5 Self-Host 
+# v1 
+# 19/06/2021-23:59:31,36 
+
+
+CACHE: 
 
 favicon.png
 index.html
+LICENSE
 list.json
+README.md
+trainer.cache
 css\bootstrap.min.css
 css\font-awesome.min.css
 css\hint.css
@@ -765,9 +772,11 @@ img\CUSA20133.jpg
 img\CUSA20469.jpg
 img\CUSA24669.jpg
 img\error.png
+img\img_358398.png
 img\jOAMTdL.png
 img\main_loader.gif
 img\search-icon.png
+img\wallpaper.jpg
 js\adsbygoogle.js
 js\BigInteger.min.js
 js\bootstrap.bundle.min.js
@@ -776,7 +785,6 @@ js\jquery.min.js
 js\lazyload.min.js
 js\loadingoverlay.min.js
 js\main.js
-js\main.js.1
 metadata\12289.json
 metadata\CUSA00002.json
 metadata\CUSA00004.json
@@ -1108,11 +1116,27 @@ metadata\CUSA20469.json
 metadata\CUSA24669.json
 metadata\CUSA2976.json
 metadata\PLAS05185.json
+payloads\750.js
+payloads\int64.js
+payloads\ps4.js
+payloads\utils.js
+payloads\jb750\c-code.js
+payloads\mira750\c-code.js
+payloads\mira750\loader-750.js
+payloads\mira750\loader-751.js
+payloads\mira750\loader-755.js
+payloads\mira750\mira.js
+payloads\mira750\mira2.js
+payloads\WebRTE\index.html
+payloads\WebRTE\webrte755.js
 vid\wallpaper1.jpg
 vid\wallpaper2.jpg
 vid\wallpaper3.jpg
 vid\wallpaper5.jpg
 vid\wallpaper6.jpg
 
-NETWORK:
-*
+FALLBACK: 
+index.html 
+
+NETWORK: 
+* 
