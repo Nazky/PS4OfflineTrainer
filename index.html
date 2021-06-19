@@ -4,9 +4,6 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.png">
-        <!-- Favicon -->
-        <meta name="google-site-verification"
-        content="hJv8sL5Ve9kd2cVpDI-VSJnhVyK3pCfrGBCdbNWtgN0" />
         <meta charset="UTF-8">
         <title>PS4 Offline Trainer (TylerMods)</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -18,7 +15,7 @@
         <script src="js/BigInteger.min.js"></script>
         <script src="js/loadingoverlay.min.js"></script>
         <script src="js/main.js"></script>
-		<script data-ad-client="ca-pub-1858709607248112" async src="js/adsbygoogle.js"></script>
+		
     </head>
     <body class="bg-dark">
         <script>
@@ -38,11 +35,7 @@
             };
             </script>
 
-        <video autoplay muted loop class="vid">
-            <source src="vid/jumbotron.mp4" type="video/mp4">
-        </video>
-
-        <div id="progress"></div>
+        <div id="progress" style="color:white;"></div>
 
         <div class="jumbotron transparent">
             <div class="d-flex justify-content-center">
@@ -121,7 +114,7 @@
                     <div class="modal-body">
                         <div class="d-flex flex-wrap rounded m-1 bg-darker"  style="min-height: 128px;">
                             <div class="bg-black">
-                                <img id="cover" class="coverholder m-1 rounded lazy" onerror="if (this.src !== ' img/error.png') this.src = ' img/error.png';" style="width :118px">
+                                <img id="cover" class="coverholder m-1 rounded lazy" onerror="if (this.src !== ' ./error.png') this.src = ' ./error.png';" style="width :118px">
                             </div>
                             <div class="GInfo bg-black">
                                 <h5><small id="game"></small></h5>
